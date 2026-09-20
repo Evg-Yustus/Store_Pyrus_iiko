@@ -7,7 +7,7 @@
   "source": {
     "repository": "https://github.com/Evg-Yustus/Pyrus.iikohelp",
     "branch": "plagin",
-    "commit": "7b2ed87d32f8573e6d73976b4dd6abc4d6405b44"
+    "commit": "ab9b24eed740e2b240acb7f93bd194ca7d1d8bec"
   },
   "distribution": {
     "type": "builtin",
@@ -21,7 +21,7 @@
       "version": "1.0.0",
       "category": "ui",
       "module": "plagins/hotkeys.js",
-      "description": "",
+      "description": "Блокирует выбранные горячие клавиши и последовательности интерфейса Pyrus. Группы и отдельные команды настраиваются отдельно, а базовые сочетания копирования и вставки в полях ввода не блокируются.",
       "entry": "hotkeys.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -41,7 +41,7 @@
       "version": "1.0.0",
       "category": "native",
       "module": "plagins/ahkIikoService.js",
-      "description": "Native-плагин с прямым доступом к DOM Pyrus. Сочетания клавиш, тип действия, описание и текст вставки.",
+      "description": "Выполняет настраиваемые команды по сочетаниям клавиш: вставляет текст и команды в редактор Pyrus, создаёт упоминание @chat_bot, поддерживает FixLayout и окно переноса списка CRMID.",
       "entry": "ahkIikoService.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -62,7 +62,7 @@
       "version": "1.0.0",
       "category": "external",
       "module": "plagins/autoLoginCrm.js",
-      "description": "Автономно проверяет CRM по заданному интервалу: открывает служебную вкладку, выполняет вход в текущей сессии и закрывает её. При открытой CRM форма также заполняется автоматически.",
+      "description": "Автономно по заданному интервалу открывает скрытую вкладку crm.iiko.ru, заполняет форму, проверяет результат входа и закрывает вкладку; при открытой CRM работает в текущей вкладке.",
       "entry": "autoLoginCrm.js",
       "matches": [
         "http://crm.iiko.ru/*",
@@ -83,7 +83,7 @@
       "version": "1.0.0",
       "category": "stream",
       "module": "plagins/chatNotification.js",
-      "description": "",
+      "description": "Показывает количество непрочитанных чатов в отдельной плашке, обновляет его при изменениях списка, скрывает после открытия чата и позволяет перетащить и сохранить положение уведомления.",
       "entry": "chatNotification.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -102,7 +102,7 @@
       "version": "1.0.0",
       "category": "stream",
       "module": "plagins/chatProblemLoader.js",
-      "description": "",
+      "description": "Заполняет карточки потока проблемой, приоритетом и этапом через API и DOM-кэш, показывает новые непрочитанные чаты и статус ответа Auto-reply, группирует поток по приоритетам и поддерживает ручную сортировку перетаскиванием.",
       "entry": "chatProblemLoader.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -123,7 +123,7 @@
       "version": "1.0.20",
       "category": "stream",
       "module": "plagins/autoReply.js",
-      "description": "Ответ только в новые непрочитанные чаты без ответа сотрудника. Каждый тип чата включается отдельно: Telegram, Помощник, Глобальный Помощник, Почта / Email и MAX.",
+      "description": "Отправляет первый ответ только в новые непрочитанные чаты без ответа сотрудника после задержки. Поддерживает Telegram, Помощник, Глобальный Помощник, Почту / Email и MAX, проверку телефона и ID точки, статусы и звуковое уведомление.",
       "entry": "autoReply.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -142,7 +142,7 @@
       "version": "1.0.0",
       "category": "stream",
       "module": "plagins/request.js",
-      "description": "",
+      "description": "Добавляет кнопку «Реквест» на странице задачи и запускает двухэтапный watchdog-таймер с обратным отсчётом, проверкой состояния в фоне, отменой и синхронизацией после смены задачи.",
       "entry": "request.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -161,7 +161,7 @@
       "version": "1.0.2",
       "category": "stream",
       "module": "plagins/telegramTab.js",
-      "description": "",
+      "description": "Добавляет отдельную вкладку Telegram рядом с каналами ответа, переключает редактор в Telegram-режим, показывает Chat ID и поддерживает отправку текста и автоответа через редактор Trix.",
       "entry": "telegramTab.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -180,7 +180,7 @@
       "version": "1.0.0",
       "category": "stream",
       "module": "plagins/fiberScanner.js",
-      "description": "",
+      "description": "В MAIN world сканирует React Fiber в карточках нового потока Pyrus, извлекает ID задач и добавляет data-task-id для идентификации чатов другими плагинами.",
       "entry": "fiberScanner.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -199,7 +199,7 @@
       "version": "1.0.0",
       "category": "task",
       "module": "plagins/phoneExtractor.js",
-      "description": "",
+      "description": "Добавляет кнопку «Найти телефон», извлекает номера из текста задачи, нормализует их к формату 7XXXXXXXXXX, при нескольких номерах показывает выбор и вставляет результат в поле телефона Pyrus.",
       "entry": "phoneExtractor.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -218,7 +218,7 @@
       "version": "1.0.0",
       "category": "task",
       "module": "plagins/findPhones.js",
-      "description": "",
+      "description": "По кнопке «Найти телефоны» загружает список телефонов организации в скрытом iframe, показывает ссылки на задачи и звонок, сохраняет результат в кэш и восстанавливает его при возврате к задаче.",
       "entry": "findPhones.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -238,7 +238,7 @@
       "version": "1.0.0",
       "category": "ui",
       "module": "plagins/hideFilesTab.js",
-      "description": "",
+      "description": "Скрывает вкладку или блок «Файлы» на страницах задач Pyrus, когда в разделе есть вложения и штатные элементы управления, и восстанавливает DOM при выключении.",
       "entry": "hideFilesTab.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -256,7 +256,7 @@
       "version": "1.0.0",
       "category": "ui",
       "module": "plagins/chill.js",
-      "description": "",
+      "description": "На пустой странице потока #chat469817 заменяет стандартные заголовок и подсказку, добавляет Dance_Kat.gif и повторно применяет изменения после перерисовки React.",
       "entry": "chill.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -274,7 +274,7 @@
       "version": "1.0.0",
       "category": "task",
       "module": "plagins/supportSla.js",
-      "description": "",
+      "description": "Добавляет вертикальные кнопки «Поддержка», «Счета», «Контракты» и «Лицензии», подставляет ID организации, открывает CRM-ссылки, показывает условия SLA в модальном окне и создаёт нижний визуальный отступ.",
       "entry": "supportSla.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -293,7 +293,7 @@
       "version": "1.0.0",
       "category": "task",
       "module": "plagins/xhosmInPyrus.js",
-      "description": "",
+      "description": "Встраивает Xhosm в нижнюю часть страницы задачи через iframe с авторизационной сессией, автопоиском организации, масштабом 75%, кнопками масштаба и закрытия и сохраняемой изменяемой высотой панели.",
       "entry": "xhosmInPyrus.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -312,7 +312,7 @@
       "version": "1.0.0",
       "category": "task",
       "module": "plagins/activityFetcher.js",
-      "description": "",
+      "description": "На странице активности добавляет сбор и обновление метрик операторов за выбранный период, показывает прогресс и отмену, использует кэш и восстанавливает незавершённый сбор.",
       "entry": "activityFetcher.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -332,7 +332,7 @@
       "version": "1.0.0",
       "category": "analytics",
       "module": "plagins/productivityIk.js",
-      "description": "",
+      "description": "Добавляет вкладку «Производительность ИК» в аналитику, загружает доступную только для чтения таблицу из Google Sheets, кэширует данные на 15 минут и управляет видимостью кнопок сбора активности.",
       "entry": "productivityIk.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -351,7 +351,7 @@
       "version": "1.0.0",
       "category": "analytics",
       "module": "plagins/analyticsUiBridge.js",
-      "description": "",
+      "description": "Служебный мост аналитики: регистрирует контейнер кнопок активности и показывает или скрывает его при переключении аналитических вкладок.",
       "entry": "analyticsUiBridge.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -369,7 +369,7 @@
       "version": "1.0.0",
       "category": "system",
       "module": "plagins/memoryGuard.js",
-      "description": "",
+      "description": "Следит за накоплением задач в SPA Pyrus и использованием памяти, откладывает перезагрузку во время ввода, загрузки и диалогов, а в безопасном состоянии выполняет контролируемое обновление с защитой от частых перезапусков.",
       "entry": "memoryGuard.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -387,7 +387,7 @@
       "version": "1.0.0",
       "category": "system",
       "module": "plagins/revelio.js",
-      "description": "",
+      "description": "Собирает из настроенной страницы задачи по фильтру во временной неактивной вкладке, показывает их в потоке, кэширует список, открывает задачу по клику и позволяет массово вернуть выбранные или все задачи.",
       "entry": "revelio.js",
       "matches": [
         "*://*.pyrus.com/*"
@@ -407,7 +407,7 @@
       "version": "1.0.0",
       "category": "external",
       "module": "plagins/xhosmService.js",
-      "description": "",
+      "description": "Добавляет «О сервере» и Office/Chain в задачу, получает из Xhosm домен, версию, статус, тип, логин, пароль и ссылки, показывает локальный или удалённый клиент, кэширует результат и открывает iikoWeb.",
       "entry": "xhosmService.js",
       "matches": [
         "*://*.pyrus.com/*",
