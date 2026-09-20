@@ -1,0 +1,426 @@
+﻿{
+  "schemaVersion": 1,
+  "catalogId": "pyrus-iiko",
+  "title": "Pyrus iiko Helper Store",
+  "description": "Каталог плагинов Pyrus iiko Helper",
+  "updatedAt": "2026-09-20",
+  "source": {
+    "repository": "https://github.com/Evg-Yustus/Pyrus.iikohelp",
+    "branch": "plagin",
+    "commit": "7b2ed87d32f8573e6d73976b4dd6abc4d6405b44"
+  },
+  "distribution": {
+    "type": "builtin",
+    "installable": false,
+    "note": "Текущие записи входят в состав расширения. Установка из каталога будет подключена отдельно."
+  },
+  "plugins": [
+    {
+      "id": "hotkeys",
+      "title": "Блокировка клавиш",
+      "version": "1.0.0",
+      "category": "ui",
+      "module": "plagins/hotkeys.js",
+      "description": "",
+      "entry": "hotkeys.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "storage",
+        "hotkeys"
+      ],
+      "manifestPath": "plagins/hotkeys.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/hotkeys.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/hotkeys.js"
+    },
+    {
+      "id": "ahkIikoService",
+      "title": "AHK_iikoService",
+      "version": "1.0.0",
+      "category": "native",
+      "module": "plagins/ahkIikoService.js",
+      "description": "Native-плагин с прямым доступом к DOM Pyrus. Сочетания клавиш, тип действия, описание и текст вставки.",
+      "entry": "ahkIikoService.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "storage",
+        "hotkeys",
+        "input.write"
+      ],
+      "manifestPath": "plagins/ahkIikoService.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/ahkIikoService.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/ahkIikoService.js"
+    },
+    {
+      "id": "autoLoginCrm",
+      "title": "Auto-Login-CRM",
+      "version": "1.0.0",
+      "category": "external",
+      "module": "plagins/autoLoginCrm.js",
+      "description": "Автономно проверяет CRM по заданному интервалу: открывает служебную вкладку, выполняет вход в текущей сессии и закрывает её. При открытой CRM форма также заполняется автоматически.",
+      "entry": "autoLoginCrm.js",
+      "matches": [
+        "http://crm.iiko.ru/*",
+        "https://crm.iiko.ru/*"
+      ],
+      "permissions": [
+        "log",
+        "storage",
+        "input.write"
+      ],
+      "manifestPath": "plagins/autoLoginCrm.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/autoLoginCrm.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/autoLoginCrm.js"
+    },
+    {
+      "id": "chatNotification",
+      "title": "Уведомления чатов",
+      "version": "1.0.0",
+      "category": "stream",
+      "module": "plagins/chatNotification.js",
+      "description": "",
+      "entry": "chatNotification.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "storage"
+      ],
+      "manifestPath": "plagins/chatNotification.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/chatNotification.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/chatNotification.js"
+    },
+    {
+      "id": "chatProblemLoader",
+      "title": "Новый поток / Chat Problem",
+      "version": "1.0.0",
+      "category": "stream",
+      "module": "plagins/chatProblemLoader.js",
+      "description": "",
+      "entry": "chatProblemLoader.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "storage",
+        "pyrus.task.read",
+        "navigation"
+      ],
+      "manifestPath": "plagins/chatProblemLoader.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/chatProblemLoader.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/chatProblemLoader.js"
+    },
+    {
+      "id": "autoReply",
+      "title": "Auto-reply",
+      "version": "1.0.20",
+      "category": "stream",
+      "module": "plagins/autoReply.js",
+      "description": "Ответ только в новые непрочитанные чаты без ответа сотрудника. Каждый тип чата включается отдельно: Telegram, Помощник, Глобальный Помощник, Почта / Email и MAX.",
+      "entry": "autoReply.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "storage"
+      ],
+      "manifestPath": "plagins/autoReply.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/autoReply.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/autoReply.js"
+    },
+    {
+      "id": "request",
+      "title": "Request",
+      "version": "1.0.0",
+      "category": "stream",
+      "module": "plagins/request.js",
+      "description": "",
+      "entry": "request.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "storage"
+      ],
+      "manifestPath": "plagins/request.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/request.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/request.js"
+    },
+    {
+      "id": "telegramTab",
+      "title": "Вкладка Telegram",
+      "version": "1.0.2",
+      "category": "stream",
+      "module": "plagins/telegramTab.js",
+      "description": "",
+      "entry": "telegramTab.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "input.write"
+      ],
+      "manifestPath": "plagins/telegramTab.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/telegramTab.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/telegramTab.js"
+    },
+    {
+      "id": "fiberScanner",
+      "title": "Fiber scanner задач",
+      "version": "1.0.0",
+      "category": "stream",
+      "module": "plagins/fiberScanner.js",
+      "description": "",
+      "entry": "fiberScanner.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "page.read"
+      ],
+      "manifestPath": "plagins/fiberScanner.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/fiberScanner.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/fiberScanner.js"
+    },
+    {
+      "id": "phoneExtractor",
+      "title": "Найти телефон",
+      "version": "1.0.0",
+      "category": "task",
+      "module": "plagins/phoneExtractor.js",
+      "description": "",
+      "entry": "phoneExtractor.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "page.read"
+      ],
+      "manifestPath": "plagins/phoneExtractor.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/phoneExtractor.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/phoneExtractor.js"
+    },
+    {
+      "id": "findPhones",
+      "title": "Найти телефоны",
+      "version": "1.0.0",
+      "category": "task",
+      "module": "plagins/findPhones.js",
+      "description": "",
+      "entry": "findPhones.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "storage",
+        "page.read"
+      ],
+      "manifestPath": "plagins/findPhones.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/findPhones.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/findPhones.js"
+    },
+    {
+      "id": "hideFilesTab",
+      "title": "Скрыть вкладку Файлы",
+      "version": "1.0.0",
+      "category": "ui",
+      "module": "plagins/hideFilesTab.js",
+      "description": "",
+      "entry": "hideFilesTab.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log"
+      ],
+      "manifestPath": "plagins/hideFilesTab.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/hideFilesTab.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/hideFilesTab.js"
+    },
+    {
+      "id": "chill",
+      "title": "Chill",
+      "version": "1.0.0",
+      "category": "ui",
+      "module": "plagins/chill.js",
+      "description": "",
+      "entry": "chill.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log"
+      ],
+      "manifestPath": "plagins/chill.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/chill.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/chill.js"
+    },
+    {
+      "id": "supportSla",
+      "title": "Поддержка SLA",
+      "version": "1.0.0",
+      "category": "task",
+      "module": "plagins/supportSla.js",
+      "description": "",
+      "entry": "supportSla.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "page.read"
+      ],
+      "manifestPath": "plagins/supportSla.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/supportSla.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/supportSla.js"
+    },
+    {
+      "id": "xhosmInPyrus",
+      "title": "Xhosm в Pyrus",
+      "version": "1.0.0",
+      "category": "task",
+      "module": "plagins/xhosmInPyrus.js",
+      "description": "",
+      "entry": "xhosmInPyrus.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "page.read"
+      ],
+      "manifestPath": "plagins/xhosmInPyrus.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/xhosmInPyrus.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/xhosmInPyrus.js"
+    },
+    {
+      "id": "activityFetcher",
+      "title": "Активность",
+      "version": "1.0.0",
+      "category": "task",
+      "module": "plagins/activityFetcher.js",
+      "description": "",
+      "entry": "activityFetcher.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "storage",
+        "pyrus.task.read"
+      ],
+      "manifestPath": "plagins/activityFetcher.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/activityFetcher.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/activityFetcher.js"
+    },
+    {
+      "id": "productivityIk",
+      "title": "Производительность ИК",
+      "version": "1.0.0",
+      "category": "analytics",
+      "module": "plagins/productivityIk.js",
+      "description": "",
+      "entry": "productivityIk.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "storage"
+      ],
+      "manifestPath": "plagins/productivityIk.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/productivityIk.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/productivityIk.js"
+    },
+    {
+      "id": "analyticsUiBridge",
+      "title": "Analytics UI bridge",
+      "version": "1.0.0",
+      "category": "analytics",
+      "module": "plagins/analyticsUiBridge.js",
+      "description": "",
+      "entry": "analyticsUiBridge.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log"
+      ],
+      "manifestPath": "plagins/analyticsUiBridge.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/analyticsUiBridge.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/analyticsUiBridge.js"
+    },
+    {
+      "id": "memoryGuard",
+      "title": "Защита памяти",
+      "version": "1.0.0",
+      "category": "system",
+      "module": "plagins/memoryGuard.js",
+      "description": "",
+      "entry": "memoryGuard.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log"
+      ],
+      "manifestPath": "plagins/memoryGuard.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/memoryGuard.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/memoryGuard.js"
+    },
+    {
+      "id": "revelio",
+      "title": "Ревелио",
+      "version": "1.0.0",
+      "category": "system",
+      "module": "plagins/revelio.js",
+      "description": "",
+      "entry": "revelio.js",
+      "matches": [
+        "*://*.pyrus.com/*"
+      ],
+      "permissions": [
+        "log",
+        "pyrus.task.read",
+        "navigation"
+      ],
+      "manifestPath": "plagins/revelio.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/revelio.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/revelio.js"
+    },
+    {
+      "id": "xhosmService",
+      "title": "XHOSM / Сервер / Office",
+      "version": "1.0.0",
+      "category": "external",
+      "module": "plagins/xhosmService.js",
+      "description": "",
+      "entry": "xhosmService.js",
+      "matches": [
+        "*://*.pyrus.com/*",
+        "*://xhosm-test.cloud.lan/*",
+        "https://*.iikoweb.ru/*"
+      ],
+      "permissions": [
+        "log",
+        "input.write"
+      ],
+      "manifestPath": "plagins/xhosmService.json",
+      "manifestUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/raw/plagin/plagins/xhosmService.json",
+      "sourceUrl": "https://github.com/Evg-Yustus/Pyrus.iikohelp/blob/plagin/plagins/xhosmService.js"
+    }
+  ]
+}

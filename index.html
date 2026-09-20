@@ -1,0 +1,321 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pyrus iiko Helper Store</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f8;
+      --surface: #ffffff;
+      --surface-muted: #eef2f5;
+      --text: #18212b;
+      --muted: #627181;
+      --border: #d8e0e7;
+      --accent: #ef3b24;
+      --accent-dark: #bd2b1a;
+      --link: #0b62a4;
+      --shadow: 0 8px 24px rgba(24, 33, 43, .08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--text);
+      font: 15px/1.5 Arial, sans-serif;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 5px;
+    }
+
+    h1, h2, p { margin: 0; }
+    h1 { font-size: clamp(24px, 4vw, 36px); line-height: 1.1; }
+    .subtitle { margin-top: 6px; color: var(--muted); }
+
+    .source-link {
+      margin-left: auto;
+      color: var(--link);
+      white-space: nowrap;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) 220px auto;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    input, select {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--text);
+      padding: 9px 12px;
+      font: inherit;
+    }
+
+    .count {
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .status {
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .status.error { color: #a32418; border-color: #e4a39b; }
+
+    .plugins {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+      gap: 14px;
+    }
+
+    .plugin {
+      display: flex;
+      flex-direction: column;
+      min-height: 235px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .plugin-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .plugin h2 { font-size: 18px; line-height: 1.25; }
+    .plugin-id { margin-top: 3px; color: var(--muted); font: 12px/1.3 Consolas, monospace; }
+
+    .badge {
+      flex: 0 0 auto;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #e8f2ea;
+      color: #26733a;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .description {
+      min-height: 48px;
+      margin: 18px 0 14px;
+      color: var(--muted);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .meta span {
+      padding: 4px 7px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--surface-muted);
+    }
+
+    .links {
+      display: flex;
+      gap: 14px;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    a { color: var(--link); }
+    a:hover { color: var(--accent-dark); }
+
+    .empty { grid-column: 1 / -1; }
+
+    footer {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .page { width: min(100% - 20px, 1180px); padding-top: 18px; }
+      .header { align-items: flex-start; }
+      .source-link { display: none; }
+      .toolbar { grid-template-columns: 1fr; }
+      .count { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="brand">
+        <img src="https://raw.githubusercontent.com/Evg-Yustus/Pyrus.iikohelp/plagin/iiko-logo.png" alt="iiko">
+        <div>
+          <h1>Pyrus iiko Helper Store</h1>
+          <p class="subtitle">Каталог текущих плагинов расширения</p>
+        </div>
+      </div>
+      <a class="source-link" href="https://github.com/Evg-Yustus/Pyrus.iikohelp/tree/plagin" target="_blank" rel="noreferrer">Исходный проект</a>
+    </header>
+
+    <section class="toolbar" aria-label="Фильтры каталога">
+      <input id="search" type="search" placeholder="Поиск по названию или ID" autocomplete="off">
+      <select id="category" aria-label="Категория">
+        <option value="">Все категории</option>
+      </select>
+      <div id="count" class="count"></div>
+    </section>
+
+    <div id="status" class="status">Загрузка каталога...</div>
+    <section id="plugins" class="plugins" aria-live="polite"></section>
+
+    <footer>
+      Каталог обновлён <span id="updated"></span>. Сейчас записи отражают встроенные плагины ветки <code>plagin</code>; установка из магазина будет добавлена отдельным этапом.
+    </footer>
+  </main>
+
+  <script>
+    const categoryNames = {
+      analytics: 'Аналитика',
+      external: 'Внешние страницы',
+      native: 'Системные',
+      stream: 'Поток',
+      system: 'Служебные',
+      task: 'Задачи',
+      ui: 'Интерфейс'
+    };
+
+    const state = { catalog: null, query: '', category: '' };
+    const search = document.getElementById('search');
+    const category = document.getElementById('category');
+    const count = document.getElementById('count');
+    const status = document.getElementById('status');
+    const plugins = document.getElementById('plugins');
+    const updated = document.getElementById('updated');
+
+    function escapeHtml(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function categoryLabel(value) {
+      return categoryNames[value] || value || 'Без категории';
+    }
+
+    function render() {
+      if (!state.catalog) return;
+      const query = state.query.trim().toLowerCase();
+      const list = state.catalog.plugins.filter((plugin) => {
+        const haystack = [plugin.title, plugin.id, plugin.module, plugin.description].join(' ').toLowerCase();
+        return (!query || haystack.includes(query)) &&
+          (!state.category || plugin.category === state.category);
+      });
+
+      count.textContent = 'Плагинов: ' + list.length + ' из ' + state.catalog.plugins.length;
+      plugins.innerHTML = list.length ? list.map((plugin) => {
+        const description = plugin.description || 'Описание не указано в манифесте.';
+        const permissions = Array.isArray(plugin.permissions) ? plugin.permissions : [];
+        return '<article class="plugin">' +
+          '<div class="plugin-head">' +
+            '<div><h2>' + escapeHtml(plugin.title) + '</h2>' +
+            '<div class="plugin-id">' + escapeHtml(plugin.id) + ' · v' + escapeHtml(plugin.version) + '</div></div>' +
+            '<span class="badge">В расширении</span>' +
+          '</div>' +
+          '<p class="description">' + escapeHtml(description) + '</p>' +
+          '<div class="meta">' +
+            '<span>' + escapeHtml(categoryLabel(plugin.category)) + '</span>' +
+            '<span>' + escapeHtml(plugin.entry || 'entry') + '</span>' +
+            '<span>Прав: ' + permissions.length + '</span>' +
+          '</div>' +
+          '<div class="links">' +
+            '<a href="' + escapeHtml(plugin.manifestUrl) + '" target="_blank" rel="noreferrer">Манифест</a>' +
+            '<a href="' + escapeHtml(plugin.sourceUrl) + '" target="_blank" rel="noreferrer">Исходник</a>' +
+          '</div>' +
+        '</article>';
+      }).join('') : '<p class="status empty">Ничего не найдено.</p>';
+    }
+
+    function initialize(catalog) {
+      state.catalog = catalog;
+      const categories = Array.from(new Set(catalog.plugins.map((plugin) => plugin.category).filter(Boolean))).sort();
+      category.insertAdjacentHTML('beforeend', categories.map((value) =>
+        '<option value="' + escapeHtml(value) + '">' + escapeHtml(categoryLabel(value)) + '</option>'
+      ).join(''));
+      updated.textContent = catalog.updatedAt || 'неизвестна';
+      status.hidden = true;
+      render();
+    }
+
+    search.addEventListener('input', function (event) {
+      state.query = event.target.value;
+      render();
+    });
+
+    category.addEventListener('change', function (event) {
+      state.category = event.target.value;
+      render();
+    });
+
+    fetch('./catalog.json', { cache: 'no-cache' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.json();
+      })
+      .then(initialize)
+      .catch(function (error) {
+        status.classList.add('error');
+        status.textContent = 'Не удалось загрузить каталог: ' + error.message;
+      });
+  </script>
+</body>
+</html>
+
